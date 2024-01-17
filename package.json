@@ -1,11 +1,13 @@
 {
   "scripts": {
-    "clean": "rimraf dist/",
+    "clean": "rimraf dist/ && rimraf dist.zip",
     "copy": "copyfiles -u 1 src/**/* dist/ -e src/**/*.ts",
-    "build": "npm run clean && npm run copy && npx tsc",
+    "zip": "bestzip dist.zip dist/",
+    "build": "npm run clean && npm run copy && npx tsc && npm run zip",
     "watch": "watch \"npm run build\" ./src --ignoreDirectoryPattern=/dist/"
   },
   "devDependencies": {
+    "bestzip": "^2.2.1",
     "copyfiles": "^2.4.1",
     "rimraf": "^5.0.5",
     "typescript": "^5.3.3",

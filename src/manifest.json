@@ -1,8 +1,9 @@
 {
-  "name": "Whatsapp Messagebox Resizer",
-  "description": "Resize your Whatsapp Messagebox, for longer messages like confessing your strong feelings for your stepsister ",
+  "name": "WhatsApp Web Messagebox Resizer",
   "version": "1.0",
   "manifest_version": 3,
+  "permissions": [],
+  "host_permissions": [],
   "action": {
     "default_icon": "resize.png"
   },
