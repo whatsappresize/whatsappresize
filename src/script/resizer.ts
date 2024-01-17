@@ -33,7 +33,15 @@ function init() {
 function addListener(event: MouseEvent) {
     startResize(event);
     document.body.addEventListener("mousemove", resize);
-    document.body.addEventListener("mouseup", (_) =>  document.body.removeEventListener("mousemove", resize), { once: true });
+    document.body.addEventListener("mouseup", removeListener);
+    document.body.addEventListener("mouseleave", removeListener)
+}
+
+function removeListener(evet: MouseEvent){
+    document.body.removeEventListener("mousemove", resize);
+    // EventListener Harakiri :c
+    document.body.removeEventListener("mouseup", removeListener);
+    document.body.removeEventListener("mouseleave", removeListener)
 }
 
 
