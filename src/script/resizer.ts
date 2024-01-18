@@ -1,3 +1,6 @@
+const resizerSelector = "._3Uu1_";
+const innerTextBoxSelector = '.to2l77zo.gfz4du6o.ag5g9lrv.bze30y65.kao4egtt[tabindex="10"]'
+
 let dy = 0,
     x = 0,
     y = 0,
@@ -7,6 +10,10 @@ let innerTextBox: HTMLElement | null = null;
 let initialHeight = 0;
 
 function init() {
+    console.warn("##############################################################");
+    console.warn("Tutorial for Devs: https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+    console.warn("##############################################################");
+
     // THX: https://www.lazytechlead.com/whatsapp-web-chrome-extension/
     const observer = new MutationObserver(() => {
         const mainNode = document.body.querySelector("#main");
@@ -15,8 +22,8 @@ function init() {
             return;
         }
 
-        resizer = document.body.querySelector("._3Uu1_");
-        innerTextBox = document.body.querySelector('.to2l77zo.gfz4du6o.ag5g9lrv.bze30y65.kao4egtt[tabindex="10"]');
+        resizer = document.body.querySelector(resizerSelector);
+        innerTextBox = document.body.querySelector(innerTextBoxSelector);
 
         if (resizer && !resizer.classList.contains("badassResizer1337H4x0r")) {
             initialHeight = resizer.clientHeight;
